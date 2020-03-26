@@ -1,7 +1,0 @@
-<design:component>
-    <design:attribute name="Label" />
-    <design:attribute name="URL" />
-    <design:attribute name="isSettings" label="My Settings"/>
-    <design:attribute name="recordId" label="Record Id"/>
-    <design:attribute name="target" label="Target" description="_blank, _self"/>
-</design:component>
