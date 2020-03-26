@@ -1,0 +1,28 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="URL" type="String" />
+    <aura:attribute name="Label" type="String" />
+    <aura:attribute name="recordId" type="String" default="{!recordId}"/>
+    <aura:attribute name="isSettings" type="Boolean" />
+    <aura:attribute name="userId" type="String" />
+    <aura:attribute name="target" type="String" default="_self"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.isSettings}">
+        <aura:if isTrue="{!v.userId == v.recordId}">
+            <a onclick="{!c.gotoURL}" target="{!v.target}">
+                <div class="button adh-cta">
+                    <p>{!v.Label}</p>
+                </div>
+            </a>
+        </aura:if>
+        <aura:set attribute="else">
+       		<a onclick="{!c.gotoURL}" target="{!v.target}">
+                <div class="button adh-cta">
+                    <p>{!v.Label}</p>
+                </div>
+            </a>     
+        </aura:set>
+    </aura:if>
+
+</aura:component>
